@@ -1,0 +1,16 @@
+.cabecalho{
+    display: flex;
+    height: 50px;
+    border: 1px red solid;
+}
+
+.ChatNotificacoes{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.botaoescanear button{
+    display: flex;
+    width: 100%;
+}
