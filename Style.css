@@ -1,39 +1,297 @@
-body{
-    background-color: #f4f6f8;
-    color: #333;
-    padding: 20px;
+/* ==========================================
+   1. RESET GLOBAL E ESTRUTURA DE TELA
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.cabecalho{
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Trava a rolagem na janela principal */
+    background-color: #ffe3a8;
+    color: #333;
+    font-family: sans-serif;
+}
+
+/* Estrutura Principal da Tela em Flexbox Vertical */
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ==========================================
+   2. CABEÇALHO
+   ========================================== */
+.cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #bf5c1f;
+    background-color: #ffa800;
     padding: 15px 20px;
     border-radius: 10px;
-    box-shadow: 0 20px 5px rgba(0, 0, 0, 0);
-    margin-bottom: 25px;
+    flex-shrink: 0; /* Impede o cabeçalho de encolher */
 }
 
-.ChatNotificacoes{
+.perfil-saudacao {
+    display: flex;
+    flex-direction: row;     /* Garante que a foto e o texto fiquem lado a lado */
+    align-items: center;     /* Centraliza verticalmente o texto com a foto */
+    gap: 15px;               /* Espaçamento elegante entre a foto e a saudação */
+}
+
+/* Controle da imagem do avatar para não estourar o tamanho */
+.avatar-perfil img {
+    width: 50px;             /* Defina o tamanho ideal da foto */
+    height: 50px;
+    border-radius: 50%;      /* Deixa a foto redonda (opcional, remova se preferir quadrada) */
+    object-fit: cover;
+}
+
+.cabecalho .Saudacao {
+    font-size: 1.2rem;       /* Ajustado para um tamanho proporcional legível */
+    font-weight: bold;
+    color: #562a22;
+}
+
+.ChatNotificacoes {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding:8px 16px;
+    gap: 10px;
+}
+
+.ChatNotificacoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     border: none;
-    border-radius: 6px;
-    background-color: #2563eb;
-    color: #fff;
-    font-weight: bold;
+    border-radius: 50%;
+    background-color: #ffffff;
     cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.ChatNotificacoes button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .ChatNotificacoes button:hover {
-    background-color: #1d4ed8;
+    transform: scale(1.15);
 }
 
-.botaoescanear button{
+/* ==========================================
+   3. LAYOUT PRINCIPAL (DASHBOARD)
+   ========================================== */
+.dashboard-flex {
     display: flex;
-    width: 100%;
+    flex-direction: row-reverse;
+    gap: 20px;
+    align-items: stretch;
+    flex: 1; /* Ocupa todo o espaço vertical restante */
+    min-height: 0; /* Essencial para a rolagem interna funcionar */
+}
+
+/* ==========================================
+   4. COLUNA DIREITA (BOX ÚLTIMA COMPRA)
+   ========================================== */
+.box-ultima-compra {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    background-color: #ffcf66;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #562a22;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Lista de Itens com rolagem interna isolada */
+.lista-itens {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    margin: 15px 0;
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 5px;
+}
+
+/* Cards de produto */
+.item-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffe3a8;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: background-color 0.15s ease;
+}
+
+.item-card:hover {
+    background-color: #f1f5f9;
+}
+
+.nome-item {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1e293b;
+    flex: 1;
+}
+
+/* Badges de Categorias */
+.tag-categoria {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.tag-categoria.alimentos {
+    background-color: #e0e7ff;
+    color: #3730a3;
+}
+
+.tag-categoria.limpeza {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+.tag-categoria.bebidas {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* Indicador de Quantidade */
+.quantidade-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.quantidade-box .numero {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.quantidade-box .unidade {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: #ffcf66;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: lowercase;
+}
+
+/* ==========================================
+   5. COLUNA ESQUERDA (MENUS / RELATÓRIOS)
+   ========================================== */
+.coluna-menus {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    min-height: 0;
+}
+
+.botoes-danfe {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.botoes-danfe button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eb4c1d;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-escanear:hover,
+.btn-importar:hover {
+    background-color: #d43c0f;
+    transform: scale(1.015);
+}
+
+.box-relatorios {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    background-color: #562a22;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e2e8f0;
+    min-height: 0;
+}
+
+.relatorios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-atalho {
+    width: calc((100% - 20px) / 3);
+    aspect-ratio: 1 / 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffe3a8;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-atalho .icone {
+    font-size: 1.1rem;
+}
+
+.btn-atalho .texto {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.15;
+    word-break: break-word;
+}
+
+.btn-atalho:hover {
+    border-color: #ffe3a8;
+    background-color: #ffe3a8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }

@@ -1,39 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="Stylesheet" href="Style.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
-
-
 <body>
-<div class ="cabecalho">
-    <div class="Saudacao"><n>Olá "usuário"</n></div>
 
-    <div class="ChatNotificacoes">
-            <div class="botaochat">
-                <button>"Chat"</button>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
             </div>
-            <div class="botaonotificacao">
-                <button>"Notificacao"</button>
-            </div>
+            <h1 class="Saudacao">Olá "usuário"</h1>
         </div>
-</div>
 
-<div class="telaestoque">
-    <div class="minhasdespesas"><n>Minhas Despesas</n></div>
-    
-    <div class="qtdalimentos">Alimentos</div>
-    <div class="qtdprodutosdelimpeza">Produtos de limpeza</div>
-    <div class="botaomais"><button>Mais \/</button></div>
-    
-</div>
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
 
-<div class="Relatorios"><n>Relatorios</n></div>
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        
+        <!-- Coluna da Esquerda: Última Compra -->
+        <section class="box-ultima-compra">
+            <div class="dispensa-cabecalho">
+                <h2>Última Compra</h2>
+            </div>
 
-<div class="botaoescanear"><button>Escanear DanFe</button></div>
+            <ul class="lista-itens">
+                <li class="item-card">
+                    <span class="nome-item">Arroz Tio João 5kg</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Sabão em Pó 1kg</span>
+                    <span class="tag-categoria limpeza">Limpeza</span>
+                    <div class="quantidade-box">
+                        <span class="numero">1</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Leite Integral 1L</span>
+                    <span class="tag-categoria bebidas">Bebidas</span>
+                    <div class="quantidade-box">
+                        <span class="numero">6</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Feijão Carioca 1kg</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">3</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Detergente Neutro 500ml</span>
+                    <span class="tag-categoria limpeza">Limpeza</span>
+                    <div class="quantidade-box">
+                        <span class="numero">4</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Açúcar Refinado 1kg</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Café Torrado e Moído 500g</span>
+                    <span class="tag-categoria bebidas">Bebidas</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Óleo de Soja 900ml</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">5</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Desinfetante Lavanda 1L</span>
+                    <span class="tag-categoria limpeza">Limpeza</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Suco de Laranja 1L</span>
+                    <span class="tag-categoria bebidas">Bebidas</span>
+                    <div class="quantidade-box">
+                        <span class="numero">3</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Macarrão Espaguete 500g</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">4</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Molho de Tomate 340g</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">6</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Água Mineral sem Gás 1.5L</span>
+                    <span class="tag-categoria bebidas">Bebidas</span>
+                    <div class="quantidade-box">
+                        <span class="numero">12</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Esponja de Aço (Pct c/ 8)</span>
+                    <span class="tag-categoria limpeza">Limpeza</span>
+                    <div class="quantidade-box">
+                        <span class="numero">1</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Farinha de Trigo 1kg</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Refrigerante Guaraná 2L</span>
+                    <span class="tag-categoria bebidas">Bebidas</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Amaciante de Roupas 2L</span>
+                    <span class="tag-categoria limpeza">Limpeza</span>
+                    <div class="quantidade-box">
+                        <span class="numero">1</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Sal Refinado 1kg</span>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <div class="quantidade-box">
+                        <span class="numero">1</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Água Sanitária 2L</span>
+                    <span class="tag-categoria limpeza">Limpeza</span>
+                    <div class="quantidade-box">
+                        <span class="numero">2</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+
+                <li class="item-card">
+                    <span class="nome-item">Cerveja Puro Malte 350ml</span>
+                    <span class="tag-categoria bebidas">Bebidas</span>
+                    <div class="quantidade-box">
+                        <span class="numero">12</span>
+                        <span class="unidade">un</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Coluna da Direita: Menus e Relatórios -->
+        <aside class="coluna-menus">
+            <div class="botoes-danfe">
+                <button class="btn-escanear" type="button">
+                    📷 Escanear DANFE
+                </button>
+
+                <button class="btn-importar" type="button">
+                    📷 Importar DANFE
+                </button>
+            </div>
+            
+            <div class="box-relatorios">
+                <h2>Relatórios:</h2>
+                
+                <div class="relatorios-grid">
+                    <a href="#" class="btn-atalho">
+                        <span class="icone">🏷️</span>
+                        <span class="texto">Preço médio por produto</span>
+                    </a>
+
+                    <a href="#" class="btn-atalho">
+                        <span class="icone">📊</span>
+                        <span class="texto">Gasto mensal médio por categoria</span>
+                    </a>
+
+                    <a href="#" class="btn-atalho">
+                        <span class="icone">⭐</span>
+                        <span class="texto">Produtos mais comprados</span>
+                    </a>
+
+                    <a href="#" class="btn-atalho">
+                        <span class="icone">💰</span>
+                        <span class="texto">Gasto mensal total médio</span>
+                    </a>
+
+                    <a href="#" class="btn-atalho">
+                        <span class="icone">📉</span>
+                        <span class="texto">Variação de preços por produto</span>
+                    </a>
+                    
+                    <a href="#" class="btn-atalho">
+                        <span class="icone">📄</span>
+                        <span class="texto">Histórico de Danfes enviadas</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+    </main>
 
 </body>
 </html>
