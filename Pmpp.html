@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Médio por Produto</title>
+    <link rel="stylesheet" href="Pmpp.css">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header class="cabecalho">
+    <div class="perfil-saudacao">
+        <!-- BOTÃO DE VOLTAR ADICIONADO -->
+        <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+            <img src="img/homepage.png" alt="Voltar">
+        </a>
+        
+        <div class="avatar-perfil">
+            <img src="img/perfil.png" alt="Foto de Perfil">
+        </div>
+        <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+    </div>
+
+    <div class="ChatNotificacoes">
+        <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+        <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+    </div>
+</header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+            
+            <!-- 1. CAMPO DE PESQUISA COM AUTOCOMPLETE -->
+            <div class="busca-produto-container">
+                <label for="input-busca-produto" class="titulo-busca">Pesquisar Produto</label>
+                <div class="input-wrapper">
+                    <span class="icone-busca">🔍</span>
+                    <input type="text" id="input-busca-produto" placeholder="Digite o nome do produto (ex: Arroz, Leite, Café)..." autocomplete="off">
+                </div>
+                
+                <!-- Lista suspensa de sugestões (exemplo simulado visível) -->
+                <ul class="sugestoes-autocomplete">
+                    <li class="sugestao-item">Arroz Branco Tio João 5kg</li>
+                    <li class="sugestao-item">Arboz Integral 1kg</li>
+                </ul>
+            </div>
+
+            <!-- 2. RESULTADOS DO PRODUTO SELECIONADO -->
+            <div class="resultado-produto-wrapper">
+                <div class="cabecalho-produto-selecionado">
+                    <h2 class="nome-produto-destaque">Arroz Branco Tio João 5kg</h2>
+                    <span class="tag-categoria alimentos">Alimentos</span>
+                </div>
+
+                <!-- Cards de Métricas -->
+                <div class="cards-resumo-grid">
+                    <div class="card-metrica">
+                        <span class="titulo-metrica">Preço Médio Histórico</span>
+                        <span class="valor-metrica">R$ 24,90</span>
+                    </div>
+                    <div class="card-metrica">
+                        <span class="titulo-metrica">Preço da Última Compra</span>
+                        <span class="valor-metrica">R$ 26,50</span>
+                    </div>
+                    <div class="card-metrica">
+                        <span class="titulo-metrica">Variação vs Média</span>
+                        <span class="valor-metrica" style="color: #854d0e;">+6.4% 📈</span>
+                    </div>
+                </div>
+
+                <!-- 3. HISTÓRICO DE COMPRAS DESSE PRODUTO -->
+                <div class="bloco-historico-mensal">
+                    <h3>Histórico de Aquisições</h3>
+                    <ul class="lista-itens">
+                        <li class="item-card">
+                            <span class="nome-item">05/06/2026 — Nota #04821</span>
+                            <span class="tag-categoria alimentos">1 un</span>
+                            <div class="quantidade-box">
+                                <span class="numero">R$ 26,50</span>
+                            </div>
+                        </li>
+                        <li class="item-card">
+                            <span class="nome-item">12/04/2026 — Nota #03912</span>
+                            <span class="tag-categoria alimentos">1 un</span>
+                            <div class="quantidade-box">
+                                <span class="numero">R$ 24,00</span>
+                            </div>
+                        </li>
+                        <li class="item-card">
+                            <span class="nome-item">20/01/2026 — Nota #01829</span>
+                            <span class="tag-categoria alimentos">2 un</span>
+                            <div class="quantidade-box">
+                                <span class="numero">R$ 24,20</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html> 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Mais Comprados</title>
+    <link rel="stylesheet" href="pmcp.css">
+</head>
+<body>
+
+    <!-- Cabeçalho (Padrão do Sistema) -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <img src="img/homepage.png" alt="Voltar">
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+            
+            <!-- 1. CARDS DE RESUMO DO RANKING -->
+            <div class="cards-resumo-grid">
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Mais Frequente</span>
+                    <span class="valor-metrica">Arroz Tio João 5kg</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Itens Distintos</span>
+                    <span class="valor-metrica">48 produtos</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Categoria Líder</span>
+                    <span class="valor-metrica">Alimentos</span>
+                </div>
+            </div>
+
+            <!-- 2. LISTA DE RANKING DOS PRODUTOS -->
+            <div class="bloco-ranking-container">
+                <h3>Ranking de Frequência de Aquisição (Últimos 12 Meses)</h3>
+                
+                <div class="lista-ranking">
+                    
+                    <!-- Item 1 -->
+                    <div class="item-ranking">
+                        <div class="posicao-ranking ouro">1º</div>
+                        <div class="info-produto-ranking">
+                            <span class="nome-prod-rank">Arroz Branco Tio João 5kg</span>
+                            <span class="tag-categoria alimentos">Alimentos</span>
+                        </div>
+                        <div class="estatisticas-ranking">
+                            <span class="qtd-compras">14 compras</span>
+                            <span class="total-gasto-rank">R$ 350,00 total</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="item-ranking">
+                        <div class="posicao-ranking prata">2º</div>
+                        <div class="info-produto-ranking">
+                            <span class="nome-prod-rank">Leite Integral 1L</span>
+                            <span class="tag-categoria bebidas">Bebidas</span>
+                        </div>
+                        <div class="estatisticas-ranking">
+                            <span class="qtd-compras">12 compras</span>
+                            <span class="total-gasto-rank">R$ 68,40 total</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="item-ranking">
+                        <div class="posicao-ranking bronze">3º</div>
+                        <div class="info-produto-ranking">
+                            <span class="nome-prod-rank">Café em Pó 500g</span>
+                            <span class="tag-categoria alimentos">Alimentos</span>
+                        </div>
+                        <div class="estatisticas-ranking">
+                            <span class="qtd-compras">10 compras</span>
+                            <span class="total-gasto-rank">R$ 195,00 total</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="item-ranking">
+                        <div class="posicao-ranking comum">4º</div>
+                        <div class="info-produto-ranking">
+                            <span class="nome-prod-rank">Papel Higiênico 16 Rolos</span>
+                            <span class="tag-categoria higiene">Higiene</span>
+                        </div>
+                        <div class="estatisticas-ranking">
+                            <span class="qtd-compras">8 compras</span>
+                            <span class="total-gasto-rank">R$ 215,20 total</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="item-ranking">
+                        <div class="posicao-ranking comum">5º</div>
+                        <div class="info-produto-ranking">
+                            <span class="nome-prod-rank">Detergente Líquido 500ml</span>
+                            <span class="tag-categoria limpeza">Limpeza</span>
+                        </div>
+                        <div class="estatisticas-ranking">
+                            <span class="qtd-compras">7 compras</span>
+                            <span class="total-gasto-rank">R$ 17,50 total</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

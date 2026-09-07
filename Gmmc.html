@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Mensal por Categoria</title>
+    <link rel="stylesheet" href="Gmmc.css">
+</head>
+<body>
+
+    <!-- Cabeçalho (Padrão do Sistema) -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <span><img src="img/homepage.png" alt="Voltar"></span>
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+            
+            <!-- 1. SELETOR DE CATEGORIAS (PILLS) -->
+            <div class="seletor-categorias-container">
+                <span class="titulo-seletor">Selecione a Categoria</span>
+                <div class="categorias-pills">
+                    <button type="button" class="pill-categoria ativo">Alimentos</button>
+                    <button type="button" class="pill-categoria">Limpeza</button>
+                    <button type="button" class="pill-categoria">Bebidas</button>
+                    <button type="button" class="pill-categoria">Higiene</button>
+                </div>
+            </div>
+
+            <!-- 2. CARDS DE RESUMO DA CATEGORIA SELECIONADA -->
+            <div class="cards-resumo-grid">
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Média na Categoria</span>
+                    <span class="valor-metrica">R$ 450,00</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Mês mais Alto (Maio)</span>
+                    <span class="valor-metrica">R$ 580,00</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Total no Ano</span>
+                    <span class="valor-metrica">R$ 5.400,00</span>
+                </div>
+            </div>
+
+            <!-- 3. GRÁFICO DE BARRAS DOS ÚLTIMOS 12 MESES -->
+            <div class="bloco-grafico-container">
+                <h3>Evolução Mensal — Alimentos</h3>
+                <div class="grafico-barras">
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 520</span>
+                        <div class="barra" style="height: 90%;"></div>
+                        <span class="mes-barra">Jan</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 380</span>
+                        <div class="barra" style="height: 65%;"></div>
+                        <span class="mes-barra">Fev</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 410</span>
+                        <div class="barra" style="height: 70%;"></div>
+                        <span class="mes-barra">Mar</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 440</span>
+                        <div class="barra" style="height: 75%;"></div>
+                        <span class="mes-barra">Abr</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 580</span>
+                        <div class="barra" style="height: 100%;"></div>
+                        <span class="mes-barra">Mai</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 450</span>
+                        <div class="barra" style="height: 78%;"></div>
+                        <span class="mes-barra">Jun</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 430</span>
+                        <div class="barra" style="height: 74%;"></div>
+                        <span class="mes-barra">Jul</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 490</span>
+                        <div class="barra" style="height: 84%;"></div>
+                        <span class="mes-barra">Ago</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 390</span>
+                        <div class="barra" style="height: 67%;"></div>
+                        <span class="mes-barra">Set</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 460</span>
+                        <div class="barra" style="height: 79%;"></div>
+                        <span class="mes-barra">Out</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 420</span>
+                        <div class="barra" style="height: 72%;"></div>
+                        <span class="mes-barra">Nov</span>
+                    </div>
+                    <div class="coluna-grafico">
+                        <span class="valor-barra">R$ 510</span>
+                        <div class="barra" style="height: 88%;"></div>
+                        <span class="mes-barra">Dez</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

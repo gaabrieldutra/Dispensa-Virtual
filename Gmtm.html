@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Mensal Total Médio</title>
+    <link rel="stylesheet" href="Gmtm.css">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header class="cabecalho">
+    <div class="perfil-saudacao">
+        <!-- BOTÃO DE VOLTAR ADICIONADO -->
+        <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+            <img src="img/homepage.png" alt="Voltar">
+        </a>
+        
+        <div class="avatar-perfil">
+            <img src="img/perfil.png" alt="Foto de Perfil">
+        </div>
+        <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+    </div>
+
+    <div class="ChatNotificacoes">
+        <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+        <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+    </div>
+</header>
+
+    <!-- Conteúdo Principal da Página de Relatório -->
+    <main class="dashboard-flex">
+        
+        <!-- Seção de Cards de Resumo no Topo -->
+<section class="box-relatorio-conteudo">
+    <div class="cards-resumo-grid">
+        <div class="card-metrica">
+            <span class="titulo-metrica">Média Mensal</span>
+            <span class="valor-metrica">R$ 1.240,50</span>
+        </div>
+        <div class="card-metrica">
+            <span class="titulo-metrica">Mês Anterior</span>
+            <span class="valor-metrica">R$ 1.150,00</span>
+        </div>
+        <div class="card-metrica">
+            <span class="titulo-metrica">Total Registrado</span>
+            <span class="valor-metrica">R$ 14.886,00</span>
+        </div>
+    </div>
+
+    <!-- GRÁFICO DE BARRAS CSS PUTO -->
+    <div class="bloco-grafico-container">
+        <h3>Variação Mensal de Gastos</h3>
+        <div class="grafico-barras">
+            <!-- Janeiro (R$ 1.450 -> ~100% de altura base máxima) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.450</span>
+                <div class="barra" style="height: 100%;"></div>
+                <span class="mes-barra">Jan</span>
+            </div>
+            <!-- Fevereiro (R$ 1.050) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.050</span>
+                <div class="barra" style="height: 72%;"></div>
+                <span class="mes-barra">Fev</span>
+            </div>
+            <!-- Março (R$ 1.100) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.100</span>
+                <div class="barra" style="height: 75%;"></div>
+                <span class="mes-barra">Mar</span>
+            </div>
+            <!-- Abril (R$ 1.255) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.255</span>
+                <div class="barra" style="height: 86%;"></div>
+                <span class="mes-barra">Abr</span>
+            </div>
+            <!-- Maio (R$ 1.331) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.331</span>
+                <div class="barra" style="height: 91%;"></div>
+                <span class="mes-barra">Mai</span>
+            </div>
+            <!-- Junho (R$ 1.150) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.150</span>
+                <div class="barra" style="height: 79%;"></div>
+                <span class="mes-barra">Jun</span>
+            </div>
+            <!-- Julho (R$ 1.190) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.190</span>
+                <div class="barra" style="height: 82%;"></div>
+                <span class="mes-barra">Jul</span>
+            </div>
+            <!-- Agosto (R$ 1.280) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.280</span>
+                <div class="barra" style="height: 88%;"></div>
+                <span class="mes-barra">Ago</span>
+            </div>
+            <!-- Setembro (R$ 1.120) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.120</span>
+                <div class="barra" style="height: 77%;"></div>
+                <span class="mes-barra">Set</span>
+            </div>
+            <!-- Outubro (R$ 1.310) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.310</span>
+                <div class="barra" style="height: 90%;"></div>
+                <span class="mes-barra">Out</span>
+            </div>
+            <!-- Novembro (R$ 1.200) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.200</span>
+                <div class="barra" style="height: 82%;"></div>
+                <span class="mes-barra">Nov</span>
+            </div>
+            <!-- Dezembro (R$ 1.450) -->
+            <div class="coluna-grafico">
+                <span class="valor-barra">R$ 1.450</span>
+                <div class="barra" style="height: 100%;"></div>
+                <span class="mes-barra">Dez</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+</body>
+</html>
