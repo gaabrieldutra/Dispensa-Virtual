@@ -11,7 +11,6 @@
 <!-- Cabeçalho -->
 <header class="cabecalho">
     <div class="perfil-saudacao">
-        <!-- BOTÃO DE VOLTAR ADICIONADO -->
         <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
             <img src="img/homepage.png" alt="Voltar">
         </a>
@@ -40,67 +39,43 @@
                     <input type="text" id="input-busca-produto" placeholder="Digite o nome do produto (ex: Arroz, Leite, Café)..." autocomplete="off">
                 </div>
                 
-                <!-- Lista suspensa de sugestões (exemplo simulado visível) -->
-                <ul class="sugestoes-autocomplete">
-                    <li class="sugestao-item">Arroz Branco Tio João 5kg</li>
-                    <li class="sugestao-item">Arboz Integral 1kg</li>
-                </ul>
+                <!-- Lista suspensa de sugestões (dinâmica via JS) -->
+                <ul class="sugestoes-autocomplete" id="listaSugestoes" style="display: none;"></ul>
             </div>
 
             <!-- 2. RESULTADOS DO PRODUTO SELECIONADO -->
             <div class="resultado-produto-wrapper">
                 <div class="cabecalho-produto-selecionado">
-                    <h2 class="nome-produto-destaque">Arroz Branco Tio João 5kg</h2>
-                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <h2 class="nome-produto-destaque" id="nomeProdutoDestaque">Selecione um produto</h2>
+                    <span class="tag-categoria" id="categoriaDestaque">Geral</span>
                 </div>
 
                 <!-- Cards de Métricas -->
                 <div class="cards-resumo-grid">
                     <div class="card-metrica">
                         <span class="titulo-metrica">Preço Médio Histórico</span>
-                        <span class="valor-metrica">R$ 24,90</span>
+                        <span class="valor-metrica" id="valPrecoMedio">R$ 0,00</span>
                     </div>
                     <div class="card-metrica">
                         <span class="titulo-metrica">Preço da Última Compra</span>
-                        <span class="valor-metrica">R$ 26,50</span>
+                        <span class="valor-metrica" id="valUltimaCompra">R$ 0,00</span>
                     </div>
                     <div class="card-metrica">
                         <span class="titulo-metrica">Variação vs Média</span>
-                        <span class="valor-metrica" style="color: #854d0e;">+6.4% 📈</span>
+                        <span class="valor-metrica" id="valVariacao">0.0%</span>
                     </div>
                 </div>
 
                 <!-- 3. HISTÓRICO DE COMPRAS DESSE PRODUTO -->
                 <div class="bloco-historico-mensal">
                     <h3>Histórico de Aquisições</h3>
-                    <ul class="lista-itens">
-                        <li class="item-card">
-                            <span class="nome-item">05/06/2026 — Nota #04821</span>
-                            <span class="tag-categoria alimentos">1 un</span>
-                            <div class="quantidade-box">
-                                <span class="numero">R$ 26,50</span>
-                            </div>
-                        </li>
-                        <li class="item-card">
-                            <span class="nome-item">12/04/2026 — Nota #03912</span>
-                            <span class="tag-categoria alimentos">1 un</span>
-                            <div class="quantidade-box">
-                                <span class="numero">R$ 24,00</span>
-                            </div>
-                        </li>
-                        <li class="item-card">
-                            <span class="nome-item">20/01/2026 — Nota #01829</span>
-                            <span class="tag-categoria alimentos">2 un</span>
-                            <div class="quantidade-box">
-                                <span class="numero">R$ 24,20</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <ul class="lista-itens" id="listaHistorico"></ul>
                 </div>
             </div>
 
         </section>
     </main>
 
+    <script src="Pmpp.js"></script>
 </body>
-</html> 
+</html>

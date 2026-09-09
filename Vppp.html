@@ -38,100 +38,65 @@
                     <input type="text" id="input-busca-produto" placeholder="Digite o nome do produto para ver a flutuação..." autocomplete="off">
                 </div>
                 
-                <!-- Lista suspensa de sugestões -->
-                <ul class="sugestoes-autocomplete">
-                    <li class="sugestao-item">Arroz Branco Tio João 5kg</li>
-                    <li class="sugestao-item">Leite Integral 1L</li>
-                </ul>
+                <!-- Lista suspensa de sugestões (Preenchida via JS) -->
+                <ul class="sugestoes-autocomplete" id="sugestoes-autocomplete" style="display: none;"></ul>
             </div>
 
             <!-- 2. CABEÇALHO DO PRODUTO SELECIONADO -->
             <div class="resultado-produto-wrapper">
                 <div class="cabecalho-produto-selecionado">
-                    <h2 class="nome-produto-destaque">Arroz Branco Tio João 5kg</h2>
-                    <span class="tag-categoria alimentos">Alimentos</span>
+                    <h2 class="nome-produto-destaque" id="nomeProdutoDestaque">Selecione um Produto</h2>
+                    <span class="tag-categoria" id="tagCategoria" style="display: none;">-</span>
                 </div>
 
                 <!-- Cards de Métricas de Preço -->
                 <div class="cards-resumo-grid">
                     <div class="card-metrica">
                         <span class="titulo-metrica">Menor Preço Pago</span>
-                        <span class="valor-metrica" style="color: #166534;">R$ 22,00</span>
+                        <span class="valor-metrica" id="valMenorPreco" style="color: #166534;">R$ 0,00</span>
                     </div>
                     <div class="card-metrica">
                         <span class="titulo-metrica">Maior Preço Pago</span>
-                        <span class="valor-metrica" style="color: #991b1b;">R$ 28,50</span>
+                        <span class="valor-metrica" id="valMaiorPreco" style="color: #991b1b;">R$ 0,00</span>
                     </div>
                     <div class="card-metrica">
                         <span class="titulo-metrica">Preço Atual</span>
-                        <span class="valor-metrica">R$ 26,50</span>
+                        <span class="valor-metrica" id="valPrecoAtual">R$ 0,00</span>
                     </div>
                 </div>
 
-<!-- 3. GRÁFICO DE FLUTUAÇÃO DE PREÇO -->
+                <!-- 3. GRÁFICO DE FLUTUAÇÃO DE PREÇO -->
                 <div class="bloco-grafico-container">
                     <h3>Histórico de Flutuação de Preço (Por Data de Compra)</h3>
                     
                     <div class="grafico-container-geral">
                         <!-- Eixo Y com os intervalos de preço à esquerda -->
-                        <div class="eixo-y">
-                            <span class="label-eixo">R$ 30</span>
-                            <span class="label-eixo">R$ 26</span>
-                            <span class="label-eixo">R$ 22</span>
-                            <span class="label-eixo">R$ 18</span>
+                        <div class="eixo-y" id="eixoY">
+                            <span class="label-eixo">R$ -</span>
+                            <span class="label-eixo">R$ -</span>
+                            <span class="label-eixo">R$ -</span>
+                            <span class="label-eixo">R$ -</span>
                         </div>
 
                         <!-- Área interna do Gráfico -->
-                        <div class="grafico-barras grafico-flutuacao">
+                        <div class="grafico-barras grafico-flutuacao" id="containerPontos">
                             
                             <!-- Linha SVG que conecta os pontos dinamicamente -->
                             <svg class="linha-flutuacao-svg" preserveAspectRatio="none" viewBox="0 0 100 100">
-                                <polyline points="8.3,70 25,55 41.6,75 58.3,30 75,10 91.6,35" fill="none" stroke="#562a22" stroke-width="2.5" />
+                                <polyline id="linhaPolyline" points="" fill="none" stroke="#562a22" stroke-width="2.5" />
                             </svg>
 
-                            <!-- Ponto 1 -->
-                            <div class="coluna-grafico ponto-flutuacao">
-                                <span class="valor-barra">R$ 22,00</span>
-                                <div class="ponto-preco" style="bottom: 30%;"></div>
-                                <span class="mes-barra">15/01</span>
-                            </div>
-                            <!-- Ponto 2 -->
-                            <div class="coluna-grafico ponto-flutuacao">
-                                <span class="valor-barra">R$ 24,00</span>
-                                <div class="ponto-preco" style="bottom: 45%;"></div>
-                                <span class="mes-barra">10/02</span>
-                            </div>
-                            <!-- Ponto 3 -->
-                            <div class="coluna-grafico ponto-flutuacao">
-                                <span class="valor-barra">R$ 21,50</span>
-                                <div class="ponto-preco" style="bottom: 25%;"></div>
-                                <span class="mes-barra">05/03</span>
-                            </div>
-                            <!-- Ponto 4 -->
-                            <div class="coluna-grafico ponto-flutuacao">
-                                <span class="valor-barra">R$ 27,00</span>
-                                <div class="ponto-preco" style="bottom: 70%;"></div>
-                                <span class="mes-barra">20/04</span>
-                            </div>
-                            <!-- Ponto 5 -->
-                            <div class="coluna-grafico ponto-flutuacao">
-                                <span class="valor-barra">R$ 28,50</span>
-                                <div class="ponto-preco" style="bottom: 90%;"></div>
-                                <span class="mes-barra">12/05</span>
-                            </div>
-                            <!-- Ponto 6 -->
-                            <div class="coluna-grafico ponto-flutuacao">
-                                <span class="valor-barra">R$ 26,50</span>
-                                <div class="ponto-preco" style="bottom: 65%;"></div>
-                                <span class="mes-barra">05/06</span>
-                            </div>
+                            <!-- Os pontos do gráfico serão inseridos dinamicamente pelo JS -->
 
                         </div>
                     </div>
                 </div>
 
+            </div>
+
         </section>
     </main>
 
+    <script src="Vppp.js"></script>
 </body>
 </html>

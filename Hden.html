@@ -34,15 +34,15 @@
             <div class="cards-resumo-grid">
                 <div class="card-metrica">
                     <span class="titulo-metrica">Total Enviadas</span>
-                    <span class="valor-metrica">124 notas</span>
+                    <span class="valor-metrica" id="valTotalEnviadas">0 notas</span>
                 </div>
                 <div class="card-metrica">
                     <span class="titulo-metrica">Volume Processado</span>
-                    <span class="valor-metrica">R$ 45.280,00</span>
+                    <span class="valor-metrica" id="valVolumeProcessado">R$ 0,00</span>
                 </div>
                 <div class="card-metrica">
                     <span class="titulo-metrica">Último Envio</span>
-                    <span class="valor-metrica">Hoje, 14:32</span>
+                    <span class="valor-metrica" id="valUltimoEnvio">-</span>
                 </div>
             </div>
 
@@ -59,69 +59,14 @@
             <div class="bloco-ranking-container">
                 <h3>Notas Fiscais Processadas Recentemente</h3>
                 
-                <div class="lista-ranking">
-                    
-                    <!-- Item 1 -->
-                    <div class="item-ranking">
-                        <div class="icone-doc">📄</div>
-                        <div class="info-produto-ranking">
-                            <span class="nome-prod-rank">NF-e 000.142.859 — Série 1</span>
-                            <span class="fornecedor-danfe">Supermercado Bella Vista Ltda</span>
-                            <span class="tag-data">Enviada em: 07/09/2026 - 14:32</span>
-                        </div>
-                        <div class="estatisticas-ranking">
-                            <span class="status-badge sucesso">Processada</span>
-                            <span class="qtd-compras" style="color: #1e293b;">R$ 482,90</span>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="item-ranking">
-                        <div class="icone-doc">📄</div>
-                        <div class="info-produto-ranking">
-                            <span class="nome-prod-rank">NF-e 000.142.102 — Série 1</span>
-                            <span class="fornecedor-danfe">Atacadão Primavera S.A.</span>
-                            <span class="tag-data">Enviada em: 01/09/2026 - 09:15</span>
-                        </div>
-                        <div class="estatisticas-ranking">
-                            <span class="status-badge sucesso">Processada</span>
-                            <span class="qtd-compras" style="color: #1e293b;">R$ 1.254,40</span>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="item-ranking">
-                        <div class="icone-doc">📄</div>
-                        <div class="info-produto-ranking">
-                            <span class="nome-prod-rank">NF-e 000.141.558 — Série 2</span>
-                            <span class="fornecedor-danfe">Comercial de Alimentos Mato Grosso</span>
-                            <span class="tag-data">Enviada em: 25/08/2026 - 18:40</span>
-                        </div>
-                        <div class="estatisticas-ranking">
-                            <span class="status-badge sucesso">Processada</span>
-                            <span class="qtd-compras" style="color: #1e293b;">R$ 310,15</span>
-                        </div>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="item-ranking">
-                        <div class="icone-doc">📄</div>
-                        <div class="info-produto-ranking">
-                            <span class="nome-prod-rank">NF-e 000.140.992 — Série 1</span>
-                            <span class="fornecedor-danfe">Supermercado Bom Preço</span>
-                            <span class="tag-data">Enviada em: 18/08/2026 - 11:20</span>
-                        </div>
-                        <div class="estatisticas-ranking">
-                            <span class="status-badge sucesso">Processada</span>
-                            <span class="qtd-compras" style="color: #1e293b;">R$ 195,50</span>
-                        </div>
-                    </div>
-
+                <div class="lista-ranking" id="containerListaDanfes">
+                    <!-- Preenchido dinamicamente via JS -->
                 </div>
             </div>
 
         </section>
     </main>
 
+    <script src="Hden.js"></script>
 </body>
 </html>
