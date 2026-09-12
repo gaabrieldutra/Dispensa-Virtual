@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="Homepage.css">
+    <link rel="stylesheet" href="HomePage.css">
 </head>
 <body>
 
@@ -40,14 +40,14 @@
         <!-- Coluna da Direita: Menus e Relatórios -->
         <aside class="coluna-menus">
             <div class="botoes-danfe">
-                <button class="btn-escanear" type="button">
+                <a href="RevisarOcr.html" class="btn-escanear" style="text-decoration:none; text-align:center;">
                     📷 Escanear DANFE
-                </button>
+                </a>
 
-                <button class="btn-importar" type="button">
-                    📷 Importar DANFE
-                </button>
-            </div>
+                <a href="ImportarXml.html" class="btn-importar" style="text-decoration:none; text-align:center;">
+                    📄 Importar DANFE
+                </a>
+        </div>
             
             <div class="box-relatorios">
                 <h2>Relatórios:</h2>
@@ -87,6 +87,6 @@
         </aside>
 
     </main>
-    <script src="homepage.js"></script>
+    <script src="HomePage.js"></script>
 </body>
 </html>

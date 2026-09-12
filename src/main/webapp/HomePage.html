@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="HomePage.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        
+        <!-- Coluna da Esquerda: Última Compra -->
+        <section class="box-ultima-compra">
+            <div class="dispensa-cabecalho">
+                <h2>Última Compra</h2>
+            </div>
+
+            <ul class="lista-itens" id="listaUltimaCompra">
+                
+            </ul>
+        </section>
+
+        <!-- Coluna da Direita: Menus e Relatórios -->
+        <aside class="coluna-menus">
+            <div class="botoes-danfe">
+                <a href="RevisarOcr.html" class="btn-escanear" style="text-decoration:none; text-align:center;">
+                    📷 Escanear DANFE
+                </a>
+
+                <a href="ImportarXml.html" class="btn-importar" style="text-decoration:none; text-align:center;">
+                    📄 Importar DANFE
+                </a>
+        </div>
+            
+            <div class="box-relatorios">
+                <h2>Relatórios:</h2>
+                
+                <div class="relatorios-grid">
+                    <a href="Pmpp.html" class="btn-atalho">
+                        <span class="icone">🏷️</span>
+                        <span class="texto">Preço médio por produto</span>
+                    </a>
+
+                    <a href="Gmmc.html" class="btn-atalho">
+                        <span class="icone">📊</span>
+                        <span class="texto">Gasto mensal médio por categoria</span>
+                    </a>
+
+                    <a href="pmcp.html" class="btn-atalho">
+                        <span class="icone">⭐</span>
+                        <span class="texto">Produtos mais comprados</span>
+                    </a>
+
+                    <a href="Gmtm.html" class="btn-atalho">
+                        <span class="icone">💰</span>
+                        <span class="texto">Gasto mensal total médio</span>
+                    </a>
+
+                    <a href="Vppp.html" class="btn-atalho">
+                        <span class="icone">📉</span>
+                        <span class="texto">Variação de preços por produto</span>
+                    </a>
+                    
+                    <a href="Hden.html" class="btn-atalho">
+                        <span class="icone">📄</span>
+                        <span class="texto">Histórico de Danfes enviadas</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+    <script src="HomePage.js"></script>
+</body>
+</html>

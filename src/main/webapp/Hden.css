@@ -1,0 +1,332 @@
+/* ==========================================
+   1. RESET GLOBAL E ESTRUTURA DE TELA
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Trava a rolagem na janela principal */
+    background-color: #ffe3a8;
+    color: #333;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ==========================================
+   2. CABEÇALHO
+   ========================================== */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffa800;
+    padding: 15px 20px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.perfil-saudacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-perfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cabecalho .Saudacao {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #562a22;
+}
+
+.ChatNotificacoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.ChatNotificacoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.ChatNotificacoes button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ChatNotificacoes button:hover {
+    transform: scale(1.15);
+}
+
+/* Botão Voltar para a Home */
+.btn-voltar img {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #562a22;
+    color: #ffe3a8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffe3a8;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+    transform: scale(1.15);
+
+}
+
+/* ==========================================
+   3. LAYOUT PRINCIPAL (DASHBOARD)
+   ========================================== */
+.dashboard-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+}
+
+.box-relatorio-conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    background-color: #ffcf66;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #562a22;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================
+   4. CARDS DE RESUMO (MÉTRICAS)
+   ========================================== */
+.cards-resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.card-metrica {
+    background-color: #ffe3a8;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.titulo-metrica {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #562a22;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.valor-metrica {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #eb4c1d;
+}
+
+/* ==========================================
+   5. CAMPO DE PESQUISA DE DANFE
+   ========================================== */
+.busca-produto-container {
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.titulo-busca {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #562a22;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #ffe3a8;
+    border: 2px solid #562a22;
+    border-radius: 8px;
+    padding: 0 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.icone-busca {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#input-busca-danfe {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: #1e293b;
+    outline: none;
+}
+
+#input-busca-danfe::placeholder {
+    color: #7c544a;
+    opacity: 0.7;
+}
+
+/* ==========================================
+   6. BLOCO DA LISTA DE HISTÓRICO
+   ========================================== */
+.bloco-ranking-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe3a8;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    min-height: 0;
+}
+
+.bloco-ranking-container h3 {
+    font-size: 0.95rem;
+    color: #562a22;
+    margin-bottom: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.lista-ranking {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.item-ranking {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    gap: 15px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.item-ranking:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Ícone do Documento */
+.icone-doc {
+    font-size: 1.5rem;
+    background-color: #f1f5f9;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    flex-shrink: 0;
+}
+
+/* Informações da Nota */
+.info-produto-ranking {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.nome-prod-rank {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.fornecedor-danfe {
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.tag-data {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Estatísticas e Status à Direita */
+.estatisticas-ranking {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.status-badge.sucesso {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}

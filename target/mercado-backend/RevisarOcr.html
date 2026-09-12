@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escanear DANFE</title>
+    <link rel="stylesheet" href="revisarOcr.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <img src="img/homepage.png" alt="Voltar">
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+
+        <h2>1. Escanear Nota</h2>
+        <div class="upload-area">
+            <input type="file" id="inputImagem" accept="image/*">
+            <button class="acao-principal" onclick="escanear()">Escanear</button>
+        </div>
+
+        <div id="areaRevisao" style="display:none; flex-direction: column; gap: 12px;">
+            <h2>2. Revisar e Corrigir</h2>
+
+            <div>
+                <label>Fornecedor</label>
+                <input type="text" id="fornecedor" style="width: 100%;">
+            </div>
+
+            <div class="linha-dupla">
+                <div>
+                    <label>Número da Nota</label>
+                    <input type="text" id="numeroNota" style="width: 100%;">
+                </div>
+                <div>
+                    <label>Série</label>
+                    <input type="text" id="serieNota" style="width: 100%;">
+                </div>
+            </div>
+
+            <div class="linha-dupla">
+                <div>
+                    <label>Data da Compra</label>
+                    <input type="date" id="dataCompra" style="width: 100%;">
+                </div>
+                <div>
+                    <label>Valor Total da Nota</label>
+                    <input type="number" step="0.01" id="valorTotal" style="width: 100%;">
+                </div>
+            </div>
+
+            <h2>Itens</h2>
+            <div class="item-header">
+                <span class="col-nome">Produto</span>
+                <span class="col-qtd">Quantidade</span>
+                <span class="col-preco">Preço Unitário</span>
+            </div>
+            <div id="listaItens"></div>
+            <button class="acao-secundaria" onclick="adicionarLinhaItem('', 1, 0)">+ Adicionar Item</button>
+
+            <button class="acao-principal" onclick="salvarCompra()">Salvar Compra</button>
+        </div>
+
+        <p id="mensagem"></p>
+    </main>
+
+    <script>
+        async function escanear() {
+            const input = document.getElementById("inputImagem");
+            if (!input.files.length) { alert("Escolha uma imagem primeiro."); return; }
+
+            document.getElementById("mensagem").textContent = "Processando OCR...";
+
+            const formData = new FormData();
+            formData.append("imagem", input.files[0]);
+
+            try {
+                const resp = await fetch("/mercado-backend/api/danfe/ocr", { method: "POST", body: formData });
+                const dados = await resp.json();
+
+                if (dados.erro) {
+                    document.getElementById("mensagem").textContent = "Erro: " + dados.erro;
+                    return;
+                }
+
+                document.getElementById("fornecedor").value = dados.fornecedorSugerido || "";
+                document.getElementById("numeroNota").value = dados.numeroNotaSugerido || ("OCR-" + Date.now());
+                document.getElementById("serieNota").value = dados.serieSugerida || "-";
+                document.getElementById("dataCompra").value = dados.dataSugerida || "";
+                document.getElementById("valorTotal").value = dados.valorSugerido || 0;
+
+                document.getElementById("listaItens").innerHTML = "";
+                (dados.itensSugeridos || []).forEach(item => {
+                    adicionarLinhaItem(item.nomeSugerido, 1, item.valorSugerido);
+                });
+
+                document.getElementById("areaRevisao").style.display = "flex";
+                document.getElementById("mensagem").textContent = "Revise os dados antes de salvar.";
+
+            } catch (erro) {
+                document.getElementById("mensagem").textContent = "Erro ao escanear: " + erro;
+            }
+        }
+
+        function adicionarLinhaItem(nome, quantidade, precoUnitario) {
+            const div = document.createElement("div");
+            div.className = "item-row";
+            div.innerHTML = `
+                <input type="text" class="nome-item" value="${nome}" placeholder="Nome do produto">
+                <input type="number" step="0.001" min="0" class="qtd-item" value="${quantidade}" placeholder="Qtd">
+                <input type="number" step="0.01" min="0" class="preco-item" value="${precoUnitario}" placeholder="Preço unit.">
+                <button onclick="this.parentElement.remove()">✕</button>
+            `;
+            document.getElementById("listaItens").appendChild(div);
+        }
+
+        async function salvarCompra() {
+            const linhas = document.querySelectorAll("#listaItens .item-row");
+            const itens = Array.from(linhas).map(linha => ({
+                produtoNome: linha.querySelector(".nome-item").value,
+                quantidade: parseFloat(linha.querySelector(".qtd-item").value) || 1,
+                precoUnitario: parseFloat(linha.querySelector(".preco-item").value) || 0,
+                dataCompra: document.getElementById("dataCompra").value
+            })).filter(item => item.produtoNome.trim() !== "");
+
+            const compra = {
+                usuarioId: 1,
+                numeroNota: document.getElementById("numeroNota").value,
+                serie: document.getElementById("serieNota").value,
+                fornecedor: document.getElementById("fornecedor").value,
+                dataEmissao: document.getElementById("dataCompra").value,
+                valorTotal: parseFloat(document.getElementById("valorTotal").value) || 0,
+                origem: "OCR",
+                itens: itens
+            };
+
+            try {
+                const resp = await fetch("/mercado-backend/api/compras/registrar", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(compra)
+                });
+                const resultado = await resp.json();
+
+                if (resultado.sucesso) {
+                    document.getElementById("mensagem").textContent = "Compra salva com sucesso! Nota ID: " + resultado.notaId;
+                } else {
+                    document.getElementById("mensagem").textContent = "Erro ao salvar: " + resultado.erro;
+                }
+            } catch (erro) {
+                document.getElementById("mensagem").textContent = "Erro ao salvar: " + erro;
+            }
+        }
+    </script>
+</body>
+</html>

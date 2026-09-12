@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de DANFEs Enviadas</title>
+    <link rel="stylesheet" href="Hden.css">
+</head>
+<body>
+
+    <!-- Cabeçalho (Padrão do Sistema) -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <img src="img/homepage.png" alt="Voltar">
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+            
+            <!-- 1. CARDS DE RESUMO -->
+            <div class="cards-resumo-grid">
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Total Enviadas</span>
+                    <span class="valor-metrica" id="valTotalEnviadas">0 notas</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Volume Processado</span>
+                    <span class="valor-metrica" id="valVolumeProcessado">R$ 0,00</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Último Envio</span>
+                    <span class="valor-metrica" id="valUltimoEnvio">-</span>
+                </div>
+            </div>
+
+            <!-- 2. CAMPO DE BUSCA DE DANFEs -->
+            <div class="busca-produto-container">
+                <label for="input-busca-danfe" class="titulo-busca">Pesquisar DANFE</label>
+                <div class="input-wrapper">
+                    <span class="icone-busca">🔍</span>
+                    <input type="text" id="input-busca-danfe" placeholder="Busque por chave de acesso, número da nota ou fornecedor..." autocomplete="off">
+                </div>
+            </div>
+
+            <!-- 3. LISTA DE DANFEs ENVIADAS -->
+            <div class="bloco-ranking-container">
+                <h3>Notas Fiscais Processadas Recentemente</h3>
+                
+                <div class="lista-ranking" id="containerListaDanfes">
+                    <!-- Preenchido dinamicamente via JS -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="Hden.js"></script>
+</body>
+</html>

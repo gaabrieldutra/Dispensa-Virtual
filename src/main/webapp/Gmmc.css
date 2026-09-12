@@ -1,0 +1,313 @@
+/* ==========================================
+   1. RESET GLOBAL E ESTRUTURA DE TELA
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Trava a rolagem na janela principal */
+    background-color: #ffe3a8;
+    color: #333;
+    font-family: sans-serif;
+}
+
+/* Estrutura Principal da Tela em Flexbox Vertical */
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ==========================================
+   2. CABEÇALHO
+   ========================================== */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffa800;
+    padding: 15px 20px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.perfil-saudacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-perfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cabecalho .Saudacao {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #562a22;
+}
+
+.ChatNotificacoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.ChatNotificacoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.ChatNotificacoes button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ChatNotificacoes button:hover {
+    transform: scale(1.15);
+}
+
+/* Botão Voltar para a Home */
+.btn-voltar img {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #562a22;
+    color: #ffe3a8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffe3a8;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+    transform: scale(1.15);
+
+}
+
+.ChatNotificacoes button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.btn-voltar span {
+    font-size: 1rem;
+}
+
+/* ==========================================
+   3. LAYOUT PRINCIPAL (DASHBOARD)
+   ========================================== */
+.dashboard-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+}
+
+.box-relatorio-conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    background-color: #ffcf66;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #562a22;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================
+   4. SELETOR DE CATEGORIAS (PILLS)
+   ========================================== */
+.seletor-categorias-container {
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.titulo-seletor {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #562a22;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.categorias-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pill-categoria {
+    background-color: #ffe3a8;
+    border: 2px solid #562a22;
+    color: #562a22;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.pill-categoria:hover {
+    background-color: #ffd885;
+    transform: translateY(-1px);
+}
+
+.pill-categoria.ativo {
+    background-color: #562a22;
+    color: #ffe3a8;
+    border-color: #562a22;
+}
+
+/* ==========================================
+   5. CARDS DE RESUMO (MÉTRICAS)
+   ========================================== */
+.cards-resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.card-metrica {
+    background-color: #ffe3a8;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.titulo-metrica {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #562a22;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.valor-metrica {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #eb4c1d;
+}
+
+/* ==========================================
+   6. GRÁFICO DE BARRAS
+   ========================================== */
+.bloco-grafico-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe3a8;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    min-height: 200px;
+}
+
+.bloco-grafico-container h3 {
+    font-size: 1rem;
+    color: #562a22;
+    margin-bottom: 10px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.grafico-barras {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 25px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #562a22;
+}
+
+.coluna-grafico {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.barra {
+    width: 100%;
+    background-color: #eb4c1d;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.2s ease;
+}
+
+.barra:hover {
+    background-color: #562a22;
+}
+
+.valor-barra {
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: #562a22;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.coluna-grafico:hover .valor-barra {
+    opacity: 1;
+}
+
+.mes-barra {
+    position: absolute;
+    bottom: -22px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #562a22;
+}

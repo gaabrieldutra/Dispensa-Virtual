@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importar DANFE (XML)</title>
+    <link rel="stylesheet" href="revisarOcr.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <img src="img/homepage.png" alt="Voltar">
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        <h2>Selecione o arquivo XML da nota</h2>
+
+        <div class="upload-area">
+            <input type="file" id="inputXml" accept=".xml">
+            <button class="acao-principal" onclick="importarXml()">Importar</button>
+        </div>
+
+        <p id="mensagem"></p>
+    </main>
+
+    <script>
+        async function importarXml() {
+            const input = document.getElementById("inputXml");
+            if (!input.files.length) { alert("Escolha um arquivo XML primeiro."); return; }
+
+            document.getElementById("mensagem").textContent = "Importando...";
+
+            const formData = new FormData();
+            formData.append("arquivoXml", input.files[0]);
+
+            try {
+                const resp = await fetch("/mercado-backend/api/danfe/importar-xml", {
+                    method: "POST",
+                    body: formData
+                });
+                const resultado = await resp.json();
+
+                if (resultado.sucesso) {
+                    document.getElementById("mensagem").textContent = "Nota importada com sucesso! ID: " + resultado.notaId;
+                } else {
+                    document.getElementById("mensagem").textContent = "Erro: " + resultado.erro;
+                }
+            } catch (erro) {
+                document.getElementById("mensagem").textContent = "Erro ao importar: " + erro;
+            }
+        }
+    </script>
+</body>
+</html>

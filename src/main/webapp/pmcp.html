@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Mais Comprados</title>
+    <link rel="stylesheet" href="pmcp.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <img src="img/homepage.png" alt="Voltar">
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+            
+            <!-- 1. CARDS DE RESUMO DO RANKING -->
+            <div class="cards-resumo-grid">
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Mais Frequente</span>
+                    <span class="valor-metrica" id="valMaisFrequente">-</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Itens Distintos</span>
+                    <span class="valor-metrica" id="valItensDistintos">0 produtos</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Categoria Líder</span>
+                    <span class="valor-metrica" id="valCategoriaLider">-</span>
+                </div>
+            </div>
+
+            <!-- 2. LISTA DE RANKING DOS PRODUTOS -->
+            <div class="bloco-ranking-container">
+                <h3>Ranking de Frequência de Aquisição</h3>
+                
+                <div class="lista-ranking" id="containerRanking">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="pmcp.js"></script>
+</body>
+</html>

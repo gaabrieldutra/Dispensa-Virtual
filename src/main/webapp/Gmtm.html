@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Mensal Total Médio</title>
+    <link rel="stylesheet" href="Gmtm.css">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header class="cabecalho">
+    <div class="perfil-saudacao">
+        <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+            <img src="img/homepage.png" alt="Voltar">
+        </a>
+        
+        <div class="avatar-perfil">
+            <img src="img/perfil.png" alt="Foto de Perfil">
+        </div>
+        <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+    </div>
+
+    <div class="ChatNotificacoes">
+        <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+        <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+    </div>
+</header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+            
+            <!-- Cards de Resumo -->
+            <div class="cards-resumo-grid">
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Média Mensal</span>
+                    <span class="valor-metrica" id="valMediaMensal">R$ 0,00</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica" id="labelMesAnterior">Último Mês</span>
+                    <span class="valor-metrica" id="valMesAnterior">R$ 0,00</span>
+                </div>
+                <div class="card-metrica">
+                    <span class="titulo-metrica">Total Registrado</span>
+                    <span class="valor-metrica" id="valTotalRegistrado">R$ 0,00</span>
+                </div>
+            </div>
+
+            <!-- Gráfico de Barras -->
+            <div class="bloco-grafico-container">
+                <h3>Variação Mensal de Gastos</h3>
+                <div class="grafico-barras" id="containerGrafico">
+                    <!-- Gerado dinamicamente via JS -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="Gmtm.js"></script>
+</body>
+</html>
