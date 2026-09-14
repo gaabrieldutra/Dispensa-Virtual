@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Produtos</title>
+    <link rel="stylesheet" href="GerenciarProdutos.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="perfil-saudacao">
+            <a href="HomePage.html" class="btn-voltar" title="Voltar para a Home">
+                <img src="img/homepage.png" alt="Voltar">
+            </a>
+            <div class="avatar-perfil">
+                <img src="img/perfil.png" alt="Foto de Perfil">
+            </div>
+            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+        </div>
+
+        <div class="ChatNotificacoes">
+            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard-flex">
+        <section class="box-relatorio-conteudo">
+
+            <!-- Campo de Busca -->
+            <div class="busca-produto-container">
+                <label for="input-busca-produto" class="titulo-busca">Pesquisar Produto</label>
+                <div class="input-wrapper">
+                    <span class="icone-busca">🔍</span>
+                    <input type="text" id="input-busca-produto" placeholder="Digite o nome do produto..." autocomplete="off">
+                </div>
+            </div>
+
+            <!-- Lista de Produtos com Exclusão -->
+            <div class="bloco-ranking-container">
+                <h3>Produtos Cadastrados</h3>
+                <div class="lista-produtos-gerenciar" id="containerProdutos">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="GerenciarProdutos.js"></script>
+</body>
+</html>

@@ -41,4 +41,35 @@ public class ProdutoServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp)
+        throws ServletException, IOException {
+
+    String idParam = req.getParameter("id");
+
+    resp.setContentType("application/json");
+    resp.setCharacterEncoding("UTF-8");
+
+    if (idParam == null) {
+        resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        return;
+    }
+
+    try {
+        int id = Integer.parseInt(idParam);
+        boolean sucesso = dao.deletar(id);
+
+        if (sucesso) {
+            resp.setStatus(HttpServletResponse.SC_OK);
+        } else {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+
+        } catch (NumberFormatException e) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        } catch (SQLException e) {
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+        }
+    }
 }

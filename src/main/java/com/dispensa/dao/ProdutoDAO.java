@@ -9,6 +9,19 @@ import java.util.List;
 
 public class ProdutoDAO {
 
+    public boolean deletar(int id) throws SQLException {
+        String sql = "DELETE FROM produto WHERE id = ?";
+
+        try (Connection con = ConexaoBD.getConnection();
+            PreparedStatement stmt = con.prepareStatement(sql)) {
+
+                stmt.setInt(1, id);
+                int linhasAfetadas = stmt.executeUpdate();
+
+                return linhasAfetadas > 0;
+            }
+        }
+
     public int buscarOuCriarPorNome(Connection con, String nome) throws SQLException {
         String sqlBusca = "SELECT id FROM produto WHERE nome = ?";
         try (PreparedStatement stmt = con.prepareStatement(sqlBusca)) {

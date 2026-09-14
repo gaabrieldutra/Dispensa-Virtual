@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="sideMenu.css">
 </head>
 <body>
 
     <!-- Cabeçalho -->
     <header class="cabecalho">
         <div class="perfil-saudacao">
-            <div class="avatar-perfil">
-                <img src="img/perfil.png" alt="Foto de Perfil">
-            </div>
-            <h1 class="Saudacao">Olá Gabriel Dutra</h1>
+            <button type="button" class="btn-menu" id="btnAbrirMenu">☰</button>
+        <div class="avatar-perfil">
+            <img src="img/perfil.png" alt="Foto de Perfil">
+        </div>
+        <h1 class="Saudacao">Olá Gabriel Dutra</h1>
         </div>
 
-        <div class="ChatNotificacoes">
-            <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
-            <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
-        </div>
-    </header>
+    <div class="ChatNotificacoes">
+        <button type="button"><img src="img/balao-de-fala.png" alt="Chat"></button>
+        <button type="button"><img src="img/notificacao.png" alt="Notificações"></button>
+    </div>
+</header>
+
+    <!-- Menu Lateral -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <nav class="menu-lateral" id="menuLateral">
+    <div class="menu-lateral-cabecalho">
+        <h2>Menu</h2>
+        <button type="button" class="btn-fechar-menu" id="btnFecharMenu">✕</button>
+    </div>
+    <ul class="menu-lateral-links">
+        <li><a href="GerenciarProdutos.html">📦 Gerenciar produtos</a></li>
+        <li><a href="#">👤 Gerenciar conta</a></li>
+    </ul>
+    </nav>
 
     <!-- Conteúdo Principal -->
     <main class="dashboard-flex">
@@ -88,5 +103,7 @@
 
     </main>
     <script src="HomePage.js"></script>
+    <script src="sideMenu.js"></script>
+</body>
 </body>
 </html>
